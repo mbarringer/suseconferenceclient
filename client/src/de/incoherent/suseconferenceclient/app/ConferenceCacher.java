@@ -46,7 +46,8 @@ public class ConferenceCacher {
 	}
 	
 	public long cacheConference(Conference conference, Database db) {
-		String url = conference.getUrl();
+		String url = "http://www.networklab.gr/conferences";
+		//String url = conference.getUrl();
 		String eventsUrl = url + "/events.json";
 		String roomsUrl = url + "/rooms.json";
 		String speakersUrl = url + "/speakers.json";
@@ -63,6 +64,7 @@ public class ConferenceCacher {
 			JSONObject venueReply = HTTPWrapper.get(venueUrl);
 			JSONObject venue = venueReply.getJSONObject("venue");
 			String infoUrl = url + "/" + venue.getString("info_text");
+			Log.d("Application Url","INFO URL: "+infoUrl);
 			String info = HTTPWrapper.getRawText(infoUrl);
 			String venueName = venue.getString("name");
 			String venueAddr =  venue.getString("address");
@@ -134,6 +136,7 @@ public class ConferenceCacher {
 			Log.d("SUSEConferences", "Rooms");
 			publishProgress("rooms");
 			JSONObject roomsReply = HTTPWrapper.get(roomsUrl);
+			Log.d("Rooms of the event","ROOMS URL: "+roomsUrl);
 			JSONArray rooms = roomsReply.getJSONArray("rooms");
 			int roomsLen = rooms.length();
 			for (int i = 0; i < roomsLen; i++) {
@@ -148,6 +151,7 @@ public class ConferenceCacher {
 			Log.d("SUSEConferences", "Tracks");
 			publishProgress("tracks");
 			JSONObject tracksReply = HTTPWrapper.get(tracksUrl);
+			Log.d("Event tracks","Tracks: "+tracksUrl);
 			JSONArray tracks = tracksReply.getJSONArray("tracks");
 			int tracksLen = tracks.length();
 			for (int i = 0; i < tracksLen; i++) {

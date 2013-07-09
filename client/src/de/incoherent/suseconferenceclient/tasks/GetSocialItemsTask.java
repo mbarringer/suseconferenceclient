@@ -31,6 +31,7 @@ public class GetSocialItemsTask extends AsyncTask<String, Void, ArrayList<Social
 		public void socialItemsLoaded(ArrayList<SocialItem> items);
 	}
 	
+	
 	private GetSocialItemsListener mListener;
 	private Context mContext;
 	private ProgressDialog mDialog = null;
@@ -48,13 +49,21 @@ public class GetSocialItemsTask extends AsyncTask<String, Void, ArrayList<Social
 		Log.d("SUSEConferences", "Fetching social feed for " + searchTag);
 
 		if (!isCancelled()) {
+			
 			twitterItems = SocialWrapper.getTwitterItems(mContext, searchTag, 0);
+			
 		}
 		
 		if (!isCancelled()) {
+			
+			
+			
 			twitterItems.addAll(SocialWrapper.getGooglePlusItems(mContext, searchTag, 0));
+			
 			Collections.sort(twitterItems, Collections.reverseOrder());
+			
 		}
+		
 		
 		return twitterItems;
 	}
