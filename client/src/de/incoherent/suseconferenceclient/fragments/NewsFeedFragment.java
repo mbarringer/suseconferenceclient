@@ -8,6 +8,7 @@
  * Contributors:
  *     Matt Barringer <matt@incoherent.de> - initial API and implementation
  ******************************************************************************/
+
 package de.incoherent.suseconferenceclient.fragments;
 
 import java.util.ArrayList;
@@ -161,8 +162,8 @@ public class NewsFeedFragment extends SherlockListFragment implements GetSocialI
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem menuItem) {
-		switch (menuItem.getItemId()) {
-		case R.id.socialRefreshItem:
+		int itemId = menuItem.getItemId();
+		if (itemId == R.id.socialRefreshItem) {
 			requery();
 			return true;
 		}

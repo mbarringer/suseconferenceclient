@@ -16,9 +16,9 @@ public class Conference {
 	private long mSqlId = -1;
 	private String mName = "";
 	private String mDescription = "";
-	private int mYear = 2012;
+	private int mYear = 2013;
 	private String mDateRange = "";
-	private String mUrl = "";
+	private String mUrl = "http://zoumpis.eu/osc13";
 	private String mSocialTag = "";
 	private boolean mIsCached = false;
 	

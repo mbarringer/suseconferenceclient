@@ -10,6 +10,8 @@
     <string name="mySchedule">MY SCHEDULE</string>
     <string name="fullSchedule">FULL SCHEDULE</string>
     <string name="newsFeed">NEWS FEED</string>
+    <string name="rssFeed">RSS FEED</string>
+    <string name="rssFeed">RSS FEED</string>
     <string name="speakers">SPEAKERS</string>
     <string name="checkForUpdates">Check for Updates</string>
     <string name="twitter">Twitter</string>
@@ -32,4 +34,5 @@
     <string name="conferenceList">Set Conferences</string>
     <string name="whatsNew">What\'s New</string>
     <string name="changelog"></string>
+   <!--   <string name="Rss"> RSS Here!</string> -->
 </resources>
